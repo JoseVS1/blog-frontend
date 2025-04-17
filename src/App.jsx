@@ -8,6 +8,7 @@ import { Post } from "./pages/Post"
 import UserContext from "./context/UserContext"
 import { useEffect, useState } from "react"
 import { jwtDecode } from "jwt-decode"
+import { ProtectedRoute } from "./components/ProtectedRoute"
 
 export const App = () => {
   const [user, setUser] = useState(null);
@@ -38,10 +39,18 @@ export const App = () => {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={
+            <ProtectedRoute user={user}>
+              <Home />
+            </ProtectedRoute>
+          } />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/posts/:id" element={<Post />} />
+          <Route path="/posts/:id" element={
+            <ProtectedRoute user={user}>
+            <Post />
+          </ProtectedRoute>
+          } />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </UserContext.Provider>
