@@ -21,17 +21,17 @@ export const Navbar = () => {
 
             {user ? (
               <li>
-                <button onClick={handleLogout}>Log out</button>
+                <span onClick={handleLogout}>Log out</span>
               </li>
             ) : (
-              <>
+              <div>
                 <li>
                   <NavLink to="/signup">Sign up</NavLink>
                 </li>
                 <li>
                   <NavLink to="/login">Log in</NavLink>
                 </li>
-              </>
+              </div>
             )}
         </ul>
     </nav>

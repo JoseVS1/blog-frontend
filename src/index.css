@@ -54,6 +54,7 @@ html {
 
 a, a:visited, a:hover, a:active {
     color: inherit;
+    text-decoration: none;
   }
 
 /* ERRORS */
@@ -62,7 +63,52 @@ a, a:visited, a:hover, a:active {
     color: #DC2626;
 }
 
+/* NAVBAR */
 
+nav {
+    padding: 0 5rem;
+    height: 6rem;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100%;
+    background-color: #2e2e42;
+    color: #f8f8f8;
+}
+
+nav span {
+    cursor: pointer;
+}
+
+nav a:hover, nav span:hover {
+    text-decoration: underline;
+    color: #fca311;
+}
+
+nav span:hover {
+    color: #e63946;
+}
+
+nav ul {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul div {
+    display: flex;
+    gap: 2rem;
+}
+
+/* LOGIN PAGE */
+
+.login-page {
+    height: 94.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e2f;
+}
 
 /* PHONE */
 @media (max-width: 680px) {
