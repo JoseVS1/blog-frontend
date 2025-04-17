@@ -44,7 +44,7 @@ table {
 
 html {
     font-size: 62.5%;
-    font-family: "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
     color: #111827;
 }
 
@@ -185,6 +185,11 @@ nav ul div {
 /* PHONE */
 @media (max-width: 680px) {
     /* LOGIN AND SIGNUP PAGES */
+
+    .login-card, .signup-card {
+        width: 90%;
+        padding: 6rem 4rem;
+    }
 
 }
 

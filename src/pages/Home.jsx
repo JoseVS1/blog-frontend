@@ -22,7 +22,7 @@ export const Home = () => {
   }, [])
   
   return (
-    <div>
+    <div className="home-page">
         <h1>Blog</h1>
 
         {user && (
