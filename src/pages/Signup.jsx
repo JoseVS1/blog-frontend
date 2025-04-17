@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react"
 import UserContext from "../context/UserContext";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Errors } from "../components/Errors";
 
 export const Signup = () => {
@@ -58,23 +58,33 @@ export const Signup = () => {
     })};
 
   return (
-    <>
-      <h1>Sign up</h1>
+    <div className="signup-page">
+      <div className="signup-card">
+        <h1>Sign up</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username: </label>
-        <input type="text" name="username" id="username" value={formData.username} onChange={handleInputChange} required />
-      
-        <label htmlFor="password">Password: </label>
-        <input type="password" name="password" id="password" value={formData.password} onChange={handleInputChange} required />
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="username">Username: </label>
+            <input type="text" name="username" id="username" value={formData.username} onChange={handleInputChange} required />
+          </div>
+          
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input type="password" name="password" id="password" value={formData.password} onChange={handleInputChange} required />
+          </div>
+          
+          <div>
+            <label htmlFor="confirmPassword">Confirm password: </label>
+            <input type="password" name="confirmPassword" id="confirmPassword" value={formData.confirmPassword} onChange={handleInputChange} required />
+          
+            {errors.length > 0 && <Errors errors={errors} />}
+          </div>
+          
+          <button type="submit">Sign up</button>
+        </form>
 
-        <label htmlFor="confirmPassword">Confirm password: </label>
-        <input type="password" name="confirmPassword" id="confirmPassword" value={formData.confirmPassword} onChange={handleInputChange} required />
-
-        <button type="submit">Sign up</button>
-
-        {errors.length > 0 && <Errors errors={errors} />}
-    </form>
-  </>
+         <span>Already have an account? <span className="link"><Link to="/login">Log in</Link></span>.</span> 
+      </div>
+  </div>
   )
 }
