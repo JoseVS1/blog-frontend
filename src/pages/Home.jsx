@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router";
 import UserContext from "../context/UserContext";
+import parse from "html-react-parser"
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -23,17 +24,33 @@ export const Home = () => {
   
   return (
     <div className="home-page">
-        <h1>Blog</h1>
+        <div className="header-container">
+          <h1>Blog</h1>
+        </div>
 
         {user && (
-          <h2>Welcome, {user.username}</h2>
+          <h2>Welcome, <span className="username">{user.username}</span></h2>
         )}
 
-        <ul>
-          {posts.map(post => (
-            <li key={post.id}><Link to={`/posts/${post.id}`}>{post.title}</Link></li>
-          ))}
-        </ul>
+        {posts && posts.length > 0 ? (
+            <ul className="post-list">
+              {posts.map(post => (
+                <li key={post.id}>
+                  <Link className="post" to={`/posts/${post.id}`}>
+                    <div>
+                      <h2>{post.title}</h2>
+                      {parse(post.content)}
+                    </div>
+                  </Link>
+                  </li>
+              ))}
+            </ul>
+        ) : (
+          <div className="empty-container">
+            <h1>There are no posts...</h1>
+          </div>
+        )}
+        
     </div>
   )
 }
