@@ -60,20 +60,26 @@ export const Post = () => {
     }, [id]);
 
   return (
-    <div>
+    <div className="post-page">
         {post ? (
             <>
                 <h1>{post.title}</h1>
                 <h2>By: {postUser.username}</h2>
                 <h3>Created at: {post.createdAt}</h3>
 
-                {parse(post.content)}
+                <div className="post-content">
+                    {parse(post.content)}
+                </div>
 
                 {user ? <CommentForm postId={post.id} setComments={setComments} /> : (
                     <h2>Log in to create a comment.</h2>
                 )}
 
-                {comments && comments.length > 0 ? <Comments comments={comments} setComments={setComments} /> : <h1>There are no comments</h1> }
+                {comments && comments.length > 0 ? <Comments comments={comments} setComments={setComments} /> : (
+                    <div className="empty-comments-container">
+                        <h2>There are no comments</h2>
+                    </div>
+                ) }
             </>
         ) : (
             <p>Loading post...</p>

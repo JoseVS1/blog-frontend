@@ -28,9 +28,13 @@ export const CommentForm = ({postId, setComments}) => {
 
     }
   return (
-    <form onSubmit={handleSubmit}>
-        <textarea name="text" id="text" value={text} onChange={(e) => setText(e.target.value)}></textarea>
-        <button type="submit">Comment</button>
-    </form>
+    <>
+        <h2 className="comment-heading">Comments</h2>
+
+        <form className="create-comment-form" onSubmit={handleSubmit}>
+            <textarea name="text" id="text" value={text} onChange={(e) => setText(e.target.value)}></textarea>
+            <button type="submit">Comment</button>
+        </form>
+    </>
   )
 }
