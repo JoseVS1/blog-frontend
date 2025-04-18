@@ -25,7 +25,7 @@ export const Home = () => {
   return (
     <div className="home-page">
         <div className="header-container">
-          <h1>Blog</h1>
+          <h1>ObsidianPost</h1>
         </div>
 
         {user && (
