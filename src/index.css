@@ -508,6 +508,12 @@ div .comment-heading {
         width: 60%;
     }
 
+    /* POST PAGE */
+
+    .post-page {
+        padding: 3rem;
+    }
+
     /* CREATE COMMENT FORM */
 
     .create-comment-form textarea {
