@@ -30,8 +30,8 @@ This frontend application, built with React and Vite, serves as the primary inte
 
 1.  Clone the repository:
     ```bash
-    git clone <your-frontend-user-repo-url>
-    cd <your-frontend-user-directory>
+    git clone https://github.com/JoseVS1/blog-frontend.git
+    cd blog-frontend
     ```
 
 2.  Install dependencies:
