@@ -88,10 +88,6 @@ This frontend application, built with React and Vite, serves as the primary inte
 -   Submit the form to add a comment.
 -   If a comment belongs to the logged-in user, "Edit" and "Delete" buttons will appear for that comment.
 
-## API Endpoints
-
-This application consumes the ObsidianPost Backend API. It does not expose its own endpoints. Key interactions include fetching posts, fetching comments, user signup/login, and comment CRUD operations via the backend API.
-
 ## Security
 
 -   User authentication relies on JWT tokens provided by the backend.
