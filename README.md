@@ -106,7 +106,7 @@ This frontend application, built with React and Vite, serves as the primary inte
 
 ## License
 
-[MIT License](LICENSE)
+MIT License
 
 ## Acknowledgements
 
